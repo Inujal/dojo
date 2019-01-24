@@ -162,8 +162,8 @@ public class ExerciseSelectorController extends BorderPane {
         Exercise selectedExercise = exerciseList.getSelectionModel().getSelectedItem();
         if (selectedExercise != null) {
             this.selectedExercise.set(selectedExercise);
+            bus.post(new ExerciseEvent(selectedExercise));
         }
-        bus.post(new ExerciseEvent(selectedExercise));
     }
 
     public void cancelButtonAction() {
